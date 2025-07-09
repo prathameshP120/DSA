@@ -1,0 +1,113 @@
+Utility Classes in Java (Simple Explanation)
+These are helper classes with static methods that make working with collections, arrays, and objects easier.
+
+1. Collections Class
+Purpose: Provides useful methods for working with Lists, Sets, Queues, etc.
+
+Common Methods & Usage
+Method	What It Does	Example
+sort(List)	Sorts a list	Collections.sort(myList)
+reverse(List)	Reverses a list	Collections.reverse(myList)
+shuffle(List)	Randomly shuffles a list	Collections.shuffle(myList)
+max(Collection)	Finds the maximum element	Collections.max(myList)
+min(Collection)	Finds the minimum element	Collections.min(myList)
+binarySearch(List, key)	Searches a sorted list	Collections.binarySearch(myList, "Alice")
+synchronizedList(List)	Makes a list thread-safe	List<String> syncList = Collections.synchronizedList(myList)
+Example
+java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 3, 8, 1));
+        
+        Collections.sort(numbers); // [1, 3, 5, 8]
+        Collections.reverse(numbers); // [8, 5, 3, 1]
+        
+        System.out.println("Max: " + Collections.max(numbers)); // 8
+        System.out.println("Min: " + Collections.min(numbers)); // 1
+    }
+}
+2. Arrays Class
+Purpose: Helps manipulate arrays (convert to List, sort, search, etc.).
+
+Common Methods & Usage
+Method	What It Does	Example
+asList(T... a)	=>Converts array → List	Arrays.asList("A", "B", "C")
+sort(array)	=>Sorts an array	Arrays.sort(myArray)
+binarySearch(array, key)	Searches a sorted array	Arrays.binarySearch(myArray, 5)
+copyOf(array, newSize)	Copies an array with new size	Arrays.copyOf(myArray, 10)
+equals(array1, array2)	Checks if two arrays are equal	Arrays.equals(arr1, arr2)
+fill(array, value)	Fills array with a value	Arrays.fill(myArray, 0)
+Example
+java
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        String[] fruits = {"Apple", "Banana", "Orange"};
+        
+        List<String> fruitList = Arrays.asList(fruits); // Array → List
+        System.out.println(fruitList); // [Apple, Banana, Orange]
+        
+        Arrays.sort(fruits); // Sorts the array
+        System.out.println(Arrays.toString(fruits)); // [Apple, Banana, Orange]
+        
+        int index = Arrays.binarySearch(fruits, "Banana"); // Finds index
+        System.out.println("Banana is at: " + index); // 1
+    }
+}
+3. Objects Class
+Purpose: Helps avoid NullPointerException and provides object utilities.
+
+Common Methods & Usage
+Method	What It Does	Example
+equals(obj1, obj2)	Safe equals() (handles null)	Objects.equals(str1, str2)
+hashCode(obj)	Safe hashCode() (handles null)	Objects.hashCode(obj)
+toString(obj)	Safe toString() (handles null)	Objects.toString(obj)
+requireNonNull(obj)	Throws NPE if obj is null	Objects.requireNonNull(obj)
+isNull(obj)	Checks if obj is null	if (Objects.isNull(obj))
+nonNull(obj)	Checks if obj is not null	if (Objects.nonNull(obj))
+Example
+java
+import java.util.Objects;
+
+public class Main {
+    public static void main(String[] args) {
+        String name = null;
+        
+        // Safe equals() check (won't throw NullPointerException)
+        System.out.println(Objects.equals(name, "Alice")); // false
+        
+        // Safe toString() (returns "null" instead of crashing)
+        System.out.println(Objects.toString(name)); // "null"
+        
+        // Throws NullPointerException if 'name' is null
+        Objects.requireNonNull(name, "Name cannot be null!");
+    }
+}
+Key Takeaways
+Collections → Helps with Lists, Sets, Queues (sort, reverse, thread-safety).
+
+Arrays → Helps with arrays (convert to List, sort, search).
+
+Objects → Prevents NullPointerException (safe equals(), hashCode()).
+
+
+
+////////////////////////Set /////////////////////////////// 
+Need insertion order? → LinkedHashSet
+Need sorted order? → TreeSet (or ConcurrentSkipListSet for thread-safety)
+Set<String> orderedSet = new TreeSet<>(Comparator.reverseOrder());
+
+What is a HashSet?
+Implements the Set interface (no duplicate elements)
+Backed by a hash table (actually a HashMap instance)
+Does not maintain any order of elements (unordered collection)
+Permits null values
+
+
+
+
+
+

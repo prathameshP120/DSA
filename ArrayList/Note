@@ -1,0 +1,177 @@
+ArrayList is one of the most commonly used dynamic array implementations in Java. It is part of the java.util package and provides resizable arrays with fast random access. Below is a detailed explanation of all its methods with examples.
+
+1. ArrayList Constructors
+   ArrayList provides three ways to create an instance:
+
+1.1 ArrayList()
+Creates an empty list with default capacity (10).
+
+ArrayList<String> list1 = new ArrayList<>();
+1.2 ArrayList(int initialCapacity)
+Creates an empty list with a specified initial capacity.
+
+ArrayList<Integer> list2 = new ArrayList<>(20); // Initial capacity = 20
+
+1.3 ArrayList(Collection<? extends E> c)
+Creates a list containing elements from another Collection (e.g., another List, Set).
+
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+ArrayList<String> list3 = new ArrayList<>(names); // Copies elements from 'names'
+
+    String[] fruits = {"Apple", "Banana", "Orange"};
+    // Step 2: Convert to ArrayList
+     ArrayList<String> fruitList = new ArrayList<>(Arrays.asList(fruits));
+
+2. Basic Operations
+   2.1 boolean add(E element)
+   Appends an element to the end of the list.
+
+Time Complexity: O(1) (Amortized, since resizing may occur).
+
+java
+list1.add("Java"); // ["Java"]
+list1.add("Python"); // ["Java", "Python"]
+2.2 void add(int index, E element)
+Inserts an element at a specific index (shifts existing elements right).
+
+Time Complexity: O(n) (worst case, due to shifting).
+
+java
+list1.add(1, "C++"); // ["Java", "C++", "Python"]
+2.3 E get(int index)
+Returns the element at the specified index.
+
+Time Complexity: O(1) (constant time).
+
+java
+String lang = list1.get(0); // "Java"
+2.4 E set(int index, E element)
+Replaces the element at the given index.
+
+Time Complexity: O(1).
+
+java
+list1.set(1, "JavaScript"); // ["Java", "JavaScript", "Python"]
+2.5 E remove(int index)
+Removes the element at the specified index.
+
+Time Complexity: O(n) (due to shifting).
+
+java
+String removed = list1.remove(1); // Removes "JavaScript" → ["Java", "Python"]
+2.6 boolean remove(Object o)
+Removes the first occurrence of the specified object.
+
+Time Complexity: O(n) (search + shift).
+
+java
+boolean isRemoved = list1.remove("Python"); // true → ["Java"]
+2.7 int size()
+Returns the number of elements in the list.
+
+Time Complexity: O(1).
+
+java
+int size = list1.size(); // 1
+2.8 boolean isEmpty()
+Checks if the list is empty.
+
+Time Complexity: O(1).
+
+java
+boolean empty = list1.isEmpty(); // false 3. Bulk Operations
+3.1 boolean addAll(Collection<? extends E> c)
+Appends all elements from a collection to the end.
+
+Time Complexity: O(m) (where m = size of c).
+
+java
+List<String> moreLangs = Arrays.asList("C", "Go");
+list1.addAll(moreLangs); // ["Java", "C", "Go"]
+3.2 boolean addAll(int index, Collection<? extends E> c)
+Inserts all elements from a collection at a given index.
+
+Time Complexity: O(n + m).
+
+java
+list1.addAll(1, Arrays.asList("Ruby", "Swift"));
+// ["Java", "Ruby", "Swift", "C", "Go"]
+3.3 void clear()
+Removes all elements from the list.
+
+Time Complexity: O(n) (nullifies references).
+
+java
+list1.clear(); // []
+3.4 boolean contains(Object o)
+Checks if the list contains the specified element.
+
+Time Complexity: O(n) (linear search).
+
+java
+boolean hasJava = list1.contains("Java"); // false (since list was cleared)
+3.5 boolean containsAll(Collection<?> c)
+Checks if the list contains all elements of a given collection.
+
+Time Complexity: O(n \* m).
+
+java
+List<String> checkList = Arrays.asList("Java", "C");
+boolean containsAll = list1.containsAll(checkList); // false
+3.6 boolean removeAll(Collection<?> c)
+Removes all elements present in the given collection.
+
+Time Complexity: O(n \* m).
+
+java
+list1.addAll(Arrays.asList("Java", "C", "Python", "Go"));
+list1.removeAll(Arrays.asList("C", "Go")); // ["Java", "Python"]
+3.7 boolean retainAll(Collection<?> c)
+Retains only elements present in the given collection (removes others).
+
+Time Complexity: O(n \* m).
+
+java
+list1.retainAll(Arrays.asList("Java", "C++")); // ["Java"] 4. Search & Index Operations
+4.1 int indexOf(Object o)
+Returns the first index of the specified element (-1 if not found).
+
+Time Complexity: O(n).
+
+java
+int index = list1.indexOf("Java"); // 0
+4.2 int lastIndexOf(Object o)
+Returns the last index of the specified element (-1 if not found).
+
+Time Complexity: O(n).
+
+java
+list1.add("Java");
+int lastIndex = list1.lastIndexOf("Java"); // 1 5. Iteration & Conversion
+5.1 Iterator<E> iterator()
+Returns an iterator for sequential traversal.
+
+java
+Iterator<String> it = list1.iterator();
+while (it.hasNext()) {
+System.out.println(it.next());
+}
+5.2 ListIterator<E> listIterator()
+Returns a bidirectional iterator (supports hasPrevious(), previous()).
+
+java
+ListIterator<String> listIt = list1.listIterator();
+while (listIt.hasNext()) {
+System.out.println(listIt.next());
+}
+5.3 Object[] toArray()
+Converts the list into an array.
+
+java
+Object[] arr = list1.toArray();
+
+6.1 List<E> subList(int fromIndex, int toIndex)
+Returns a view of a portion of the list.
+
+java
+List<String> subList = list1.subList(0, 1); // ["Java"]

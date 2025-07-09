@@ -1,0 +1,18 @@
+BitManipulation :
+Q]convert to Binary to Decimal and Decimal to Binary
+  //XOR => ^ => number of 1s =>odd => 1 , even =>0
+Q]Swap 2 numbers
+Q]Check if the i-th bit is set or not
+Q]Check if a number is odd or not
+Q]Check if a number is power of 2 or not
+Q]Toggle the ith bit
+Q]Remove the last Set bit
+231. Power of Two
+Q]Count the number of set bits
+2220. Minimum Bit Flips to Convert Number
+136. Single Number
+260. Single Number III
+Q]XOR of number in a given range
+29. Divide Two Integers
+
+                               

@@ -1,0 +1,19 @@
+1.Infix :
+ It is of the form <operand><operator><operand>.
+
+2.Postfix Expression:
+ It is of the form <operand><operand><operator>
+
+3.Prefix expression
+It is of the form <operator><operand><operand>.
+
+Infix expression	Prefix expression	Postfix expression
+A + B * C + D	     + + A * B C D	     A B C * + D +
+
+(A + B) * (C + D)	 * + A B + C D	     A B + C D + *
+
+A * B + C * D	     + * A B * C D	     A B * C D * +
+
+A + B + C + D    	 + + + A B C D	     A B + C + D +
+
+
