@@ -16,6 +16,7 @@ public class CheckPrime {
         }
         return false;
 
+
     }
 
     public static boolean Optimal(int n) {

@@ -13,7 +13,9 @@ public class ArmnstrongNumber {
             n = n / 10;
 
         }
+        
         return sum == num ? true : false;
+        
     }
 
     public static void main(String[] args) {

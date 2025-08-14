@@ -7,25 +7,95 @@ public class BasicPattern {
             System.out.println();
         }
     }
-
-    public static void pattern_Two() {
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j <= 4 - i - 1; j++) {
-                System.out.print("*" + " ");
+    public static void pattern_number_one(){
+        for(int i=0;i<=4;i++){
+              for(int j=0;j<=i;j++){
+                   System.out.print(j+1+" ");
+              }
+              System.out.println();
+        }
+    }
+    public static void pattern_number_two(){
+         for(int i=0;i<=4;i++){
+            for(int j=0;j<=i;j++){
+                  System.out.print(i+1+" ");
             }
             System.out.println();
-        }
+         }
+    }
+
+  
+
+    public static void pattern_two(){
+          for(int i=1;i<=5;i++){
+              for(int j=1;j<=(5-i+1); j++){
+                   System.out.print("*"+" ");
+              }
+              System.out.println();
+          }
     }
 
     // half Pyramid pattern
     public static void pattern_three() {
-        for (int i = 0; i < 4; i++) {
-            for (int num = 1; num <= i + 1; num++) {
-                System.out.print(num + " ");
+          //number of rows 
+          int n=5;
+           for(int i=0;i<=4;i++){
+               //space 
+               //for better understanding instead of printing space try to print other symbol
+               for(int j=1; j<=(n-i-1);j++){
+                    System.out.print(" "); 
+               }
+               //print star
+               for(int j=1; j<=(2*i+1);j++){
+                    System.out.print("*");
+               }
+               //print space 
+                for(int j=1; j<=(n-i-1);j++){
+                    System.out.print(" ");
+               }
+               System.out.println();
+
+           }
+    }
+    public static void pattern_three_opposite(){
+        int n=5;
+        for(int i=0;i<n;i++){
+              
+            //space
+            for(int j=0;j<i;j++){
+                System.out.print("$");
+            }
+            //star=> in each row=2n-(2i-1);
+            for(int j=0;j<(2*n-(2*i+1));j++){
+                System.out.print("*");
+            }
+            //space 
+            for(int j=0;j<i;j++){
+                System.out.print("$");
+            }
+            System.out.println();
+
+        }
+    }
+    
+    public static void pattern_four(){
+        int n=5;
+
+        for(int i=1;i<=(2*n-1);i++){
+            int stars=i;
+            
+
+            //as row>n => we simple invert the result
+            if(i>n){
+                stars=2*n-i;
+            }
+            for(int j=1;j<=stars;j++){
+                  System.out.print("*");
             }
             System.out.println();
         }
     }
+
 
     // character pattern Capital A/BC/DEF/GHIJ
     public static void char_Pattern() {
@@ -88,26 +158,35 @@ public class BasicPattern {
     // 01_triangle=>1/01/101/0101/10101
     public static void One_Zero_triangle() {
         int n = 5;
+        int start=0;
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j <= i; j++) {
-                if ((i + j) % 2 == 0) {
-                    System.out.print("1" + " ");
-                } else {
-                    System.out.print("0" + " ");
-                }
+            if(i%2==0){
+                start=1;
+            }else{
+                start=0;
+            }
+            for(int j = 0; j <= i; j++) {
+                 System.out.print(start+" ");
+                 start=1-start;  
             }
             System.out.println();
         }
     }
 // ButterFly Pattern 
     public static void main(String[] args) {
-        // pattern_one();
-        // pattern_Two();
-        // pattern_three();
-        // char_Pattern();
+        //pattern_one();
+        //pattern_number_one();
+        //pattern_number_two();
+        //pattern_two();
+        //pattern_three();
+        //pattern_three_opposite();
+        //pattern_four();
+         //One_Zero_triangle();
+         char_pattern_one();
+         //char_Pattern();
         // rectangle_pattern();
         // inverted_Rotated_half_Pyramid();
         // floyd_pattern();
-        // One_Zero_triangle();
+        
     }
 }

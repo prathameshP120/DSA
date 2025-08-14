@@ -12,6 +12,7 @@ public class PrintAllPrimeFactoeDivisor{
          }
          return true;
     }
+
     public static void ans(int n){
         ArrayList<Integer> list=new ArrayList<>();
         for(int i=1;i*i<=n;i++){
@@ -20,9 +21,9 @@ public class PrintAllPrimeFactoeDivisor{
                     list.add(i);
                 }
             }
-            if (n%i!=i){
-                if(isPrime(n%i)){
-                    list.add(n%i);
+            if (n/i!=i){
+                if(isPrime(n/i)){
+                    list.add(n/i);
                 }
             }
             

@@ -5,7 +5,6 @@ public class RearrangeArrayElementsbySign {
     public static void Bruteforce(int A[]){
         //TC=O(n+n/2)
         //SC=O(n/2+n/2)
-
         //for storing the positive and negative element 
         ArrayList<Integer> pos=new ArrayList<>();
         ArrayList<Integer> neg=new ArrayList<>();
@@ -22,6 +21,7 @@ public class RearrangeArrayElementsbySign {
                 A[2*i+1]=neg.get(i);
                  A[2*i]=pos.get(i);   
         }
+        
         for(int ele:A){
             System.out.print(" "+ele);
         }
@@ -37,13 +37,13 @@ public class RearrangeArrayElementsbySign {
             if(A[i]>0){
                 ans[pos]=A[i];
                 pos+=2;
-            }else{
+             }else{
                 ans[neg]=A[i];
                 neg+=2;
-            }
-        }
+             }
+         }
         for(int ele:ans){
-            System.out.print(" "+ele);
+            System.out.print(" " + ele);
         }
     }
     public static void Varity_two(ArrayList<Integer> A){
@@ -58,10 +58,10 @@ public class RearrangeArrayElementsbySign {
             else
                 neg.add(A.get(i));
         }
-
+        
         // If positives are lesser than the negatives.
         if (pos.size() < neg.size()) {
-
+  
             // First, fill array alternatively till the point 
             // where positives and negatives are equal in number.
             for (int i = 0; i < pos.size(); i++) {
@@ -101,19 +101,19 @@ public class RearrangeArrayElementsbySign {
     }
 
     public static void main(String[] args) {
-         //int n = 4;
-        // int A[]= {1,2,-4,-5};
+        int n = 4;
+        int A[]= {1,2,-4,-5};
         //BruteForce
-         //Bruteforce(A);
-         //Optimal
-        // Optimal(A);
+        //Bruteforce(A);
+        //Optimal
+        //Optimal(A);
 
 
 
 
          ///Variety2
-          int n = 6;
-          ArrayList<Integer> B = new ArrayList<>(Arrays.asList(1, 2, -4, -5, 3, 4));
+          //int n = 6;
+          ArrayList<Integer> B = new ArrayList<>(Arrays.asList(1, 2, -4, -5, -3));
           Varity_two(B);
     }
 }

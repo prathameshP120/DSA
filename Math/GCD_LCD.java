@@ -37,6 +37,7 @@ public class GCD_LCD {
             return b;
         }
         return a;
+    
     }
 
     public static void main(String[] args) {
