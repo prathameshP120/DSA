@@ -10,7 +10,6 @@ public class CountSubsequenceWithSumK {
             } else {
                 return 0;
             }
-
         }
         // include
         sum += arr[index];

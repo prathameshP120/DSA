@@ -1,7 +1,6 @@
 public class RemoveOuterMost {
     
-}
-class Solution {
+
     public String removeOuterParentheses(String s) {
         int start=0;
         int end=0;
@@ -22,9 +21,7 @@ class Solution {
         }
         return sb.toString();
     }
-}
 
-class Solution {
     public String removeOuterParentheses(String s) {
         //for storing the result 
         StringBuilder ans=new StringBuilder();

@@ -66,6 +66,7 @@ public class DetectCycleInDirectedGrph {
         return false;
     }
 
+
     public static void main(String[] args) {
         int V = 7;
         ArrayList<Edge>[] graph = new ArrayList[V];
@@ -74,6 +75,7 @@ public class DetectCycleInDirectedGrph {
         System.out.println(ans);
     }
 }
+
 /*
  * algorithm steps are as follows:
  * We will traverse the graph component-wise using the DFS technique.

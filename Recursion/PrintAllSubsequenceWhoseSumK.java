@@ -9,6 +9,8 @@ public class PrintAllSubsequenceWhoseSumK {
             }
             return;
         }
+
+       
         // include
         list.add(arr[index]);
         sum += arr[index];

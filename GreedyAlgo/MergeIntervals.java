@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class MergeIntervals {
-   
     public static int[][] MergeIntervals(int intervals[][]) {
         List<int[]> res = new ArrayList<>();
         // sort the intervals
@@ -14,6 +13,8 @@ public class MergeIntervals {
             int interval[] = intervals[i];
             if (newInterval[1] > interval[0]) {
                 newInterval[1] = Math.max(newInterval[1], interval[1]);
+                System.out.println();
+                System.out.print("--> "+newInterval[0]+"---"+newInterval[1]);
             } else {
                 // disjoint
                 newInterval = interval;
@@ -34,13 +35,11 @@ public class MergeIntervals {
 }
 
 // Meeting room 1 (leetcode 252)
-
 // public static boolean MeetingRoom1(int intervals[][]) {
 // // sort the intervals on the basis of start
 // Arrays.sort(intervals, Comparator.comparingInt(i -> i[0]));
 // List<int[]> res = new ArrayList<>(); // list of array to store the merge
 // intervals
-
 // int newInterval[] = intervals[0];
 
 // res.add(newInterval);
@@ -57,7 +56,6 @@ public class MergeIntervals {
 // }
 // }
 // return true; // No overlap found
-
 // }
 
 // public static void main(String[] args) {

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class LeadersInArray {
     public static void BruteForce(int arr[]){
         ArrayList<Integer> ans=new ArrayList<>();
-    
+
         for(int i=0;i<arr.length;i++){
             boolean isleader=true;  //we consider that the ith element will be our leader 
             for(int j=i+1;j<arr.length;j++){

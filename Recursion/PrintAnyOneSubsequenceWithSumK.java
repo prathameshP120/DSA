@@ -7,6 +7,7 @@ public class PrintAnyOneSubsequenceWithSumK {
             if (sum == k) {
                 System.out.println(list);
                 return true;
+                
             }
             return false;
         }
@@ -33,5 +34,6 @@ public class PrintAnyOneSubsequenceWithSumK {
         ArrayList<Integer> list = new ArrayList<>();
         boolean ans = function(arr, 2, 0, list, 0);
         System.out.println(ans);
+
     }
 }

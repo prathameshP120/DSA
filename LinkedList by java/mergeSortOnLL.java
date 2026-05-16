@@ -7,9 +7,7 @@ public class mergeSortOnLL {
             this.data = data;
             this.next = null;
         }
-
     }
-
     public static Node head;
     public static Node tail;
 
@@ -86,8 +84,7 @@ public class mergeSortOnLL {
         }
         System.out.print("null");
     }
-
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         mergeSortOnLL ll = new mergeSortOnLL();
 
         ll.head = new Node(1);
@@ -97,6 +94,7 @@ public class mergeSortOnLL {
         ll.head.next.next.next = new Node(3);
         ll.print();
         ll.mergeSort(head);
+        System.out.println();
         System.out.println("after applying the mergeSort");
         ll.print();
     }

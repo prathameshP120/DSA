@@ -1,7 +1,6 @@
 public class LargestOddNumber {
     
-}
-class Solution {
+
     public String largestOddNumber(String num) {
         //here the rember that the last number 
         //in the substring must not be the divisible by 2 for odd substring 

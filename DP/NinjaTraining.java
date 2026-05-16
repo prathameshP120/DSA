@@ -1,27 +1,27 @@
 // Recursion
-// public class NinjaTraining {
-// public static int recursion(int day, int last, int points[][]) {
-// int numberOfTask = points[0].length;
+public class NinjaTraining {
+public static int recursion(int day, int last, int points[][]) {
+int numberOfTask = points[0].length;
 
-// if (day == 0) {
-// int max = 0;
-// for (int task = 0; task < numberOfTask; task++) {
-// if (task != last) {
-// max = Math.max(max, points[day][task]); // Fix indexing here
-// }
-// }
-// return max; // Add return statement for base case
-// }
+if (day == 0) {
+int max = 0;
+for (int task = 0; task < numberOfTask; task++) {
+if (task != last) {
+max = Math.max(max, points[day][task]); // Fix indexing here
+}
+}
+return max; // Add return statement for base case
+}
 
-// int maxi = 0;
-// for (int task = 0; task < numberOfTask; task++) {
-// if (task != last) { // Ensure the same task is not picked
-// int activity = points[day][task] + recursion(day - 1, task, points);
-// maxi = Math.max(activity, maxi);
-// }
-// }
-// return maxi;
-// }
+int maxi = 0;
+for (int task = 0; task < numberOfTask; task++) {
+if (task != last) { // Ensure the same task is not picked
+int activity = points[day][task] + recursion(day - 1, task, points);
+maxi = Math.max(activity, maxi);
+}
+}
+return maxi;
+}
 
 // public static void main(String[] args) {
 // int[][] points = {

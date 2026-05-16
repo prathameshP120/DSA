@@ -13,7 +13,6 @@ public interface PrintAllSubsequence {
         function(arr, list, index + 1); // exclude
 
     }
-
     public static void main(String[] args) {
         int arr[] = { 3, 1, 2 };
         ArrayList<Integer> list = new ArrayList<>();

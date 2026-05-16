@@ -60,8 +60,7 @@ public class DFS {
             }
         }
     }
-
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         int V = 7; // Updated number of vertices to 7
         ArrayList<Edge> graph[] = new ArrayList[V]; // Declare graph with 7 vertices
 
@@ -69,9 +68,7 @@ public class DFS {
         for (int i = 0; i < V; i++) {
             graph[i] = new ArrayList<>(); // Initialize each index with an ArrayList
         }
-
         boolean vis[] = new boolean[V]; // Size of visited array also matches V
-
         CreatGraph(graph);
         dfs(graph, 0, vis);
     }

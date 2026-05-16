@@ -11,10 +11,10 @@ public class Longest_substringWithAtMostKDistinctCharacter {
         int n = s.length();
         while (r < n) {
             hm.put(s.charAt(r), hm.getOrDefault(s.charAt(r), 0) + 1);
-            while (hm.size() > k) {
-                hm.put(s.charAt(r), hm.getOrDefault(s.charAt(r), 0) - 1);
-                if (hm.get(s.charAt(r)) == 0) {
-                    hm.remove((s.charAt(r)));
+            while (hm.size() > k){
+                hm.put(s.charAt(l), hm.getOrDefault(s.charAt(l), 0) - 1);
+                if (hm.get(s.charAt(l)) == 0){
+                    hm.remove((s.charAt(l)));
                 }
                 l++;
             }
@@ -24,6 +24,7 @@ public class Longest_substringWithAtMostKDistinctCharacter {
             r++;
         }
         return maxlen;
+
     }
 
     public static void main(String[] args) {

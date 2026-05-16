@@ -14,7 +14,6 @@ public class Insertionsort {  //pick the element and place it at right position
               }
          }
 
-       
         }
     public static void printArr(int arr[]) {
         for (int i = 0; i < arr.length; i++) {

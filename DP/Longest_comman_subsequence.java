@@ -27,8 +27,8 @@ public class Longest_comman_subsequence {
 
         if (a.charAt(i) == b.charAt(j)) {
             return dp[i][j] = 1 + solveUsingRec(a, b, i - 1, j - 1);
-
         }
+        
         return dp[i][j] = Math.max(solveUsingRec(a, b, i - 1, j), solveUsingRec(a, b, i, j - 1));
 
     }
@@ -107,8 +107,10 @@ public class Longest_comman_subsequence {
     }
 
     public static void main(String[] args) {
-        String str1 = "abc";
-        String str2 = "abcd";
+        // String str1 = "abc";
+        // String str2 = "abcd";
+        String str1 = "acd";
+        String str2 = "ced";
         int i = str1.length() - 1;
         int j = str2.length() - 1;
         // int res = solveUsingRec(str1, str2, i, j);

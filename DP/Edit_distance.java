@@ -1,31 +1,22 @@
 import java.util.Arrays;
 
 public class Edit_distance {
+    
+      public int rec(int i, int j, String s1, String s2) {
+        if (j < 0) return i + 1;
+        if (i < 0) return j + 1;
 
-    public static int solveUsingRec(String a, String b, int i, int j) {
-        // Base case
-        if (i < 0) { // insert operation
-            return j + 1;
+        // ✅ If characters match → no cost
+        if (s1.charAt(i) == s2.charAt(j)) {
+            return rec(i - 1, j - 1, s1, s2);
         }
 
-        if (j < 0) { // deletion operation
-            return i + 1;
-        }
+        // ❌ If not match → try all 3 operations
+        int insert = rec(i, j - 1, s1, s2);
+        int remove = rec(i - 1, j, s1, s2);
+        int replace = rec(i - 1, j - 1, s1, s2);
 
-        int ans = 0;
-        if (a.charAt(i) == b.charAt(j)) {
-            ans = 0 + solveUsingRec(a, b, i - 1, j - 1);
-
-        } else {
-
-            int insert = 1 + solveUsingRec(a, b, i, j - 1);
-            int replace = 1 + solveUsingRec(a, b, i - 1, j - 1);
-            int delete = 1 + solveUsingRec(a, b, i - 1, j);
-
-            ans = Math.min(replace, Math.min(insert, delete));
-
-        }
-        return ans;
+        return 1 + Math.min(insert, Math.min(remove, replace));
     }
 
     public static int solveUsingMem(String a, String b, int i, int j, int dp[][]) {

@@ -54,6 +54,8 @@ public class DeleteNthNodeFromEnd {
     }
 
     public static void deleteNthNodeFromEnd(int n) {
+       //we simple identify that the node which is the nth from tail . That node is the (size-n+1) from the start
+
         Node prev = head;
         int sz = 0;
 
@@ -66,7 +68,6 @@ public class DeleteNthNodeFromEnd {
             head = head.next;
             return;
         }
-
         Node temp = head;
         int i = 1;
         int itoFind = sz - n; // Nth Node from the start=size-n+1
@@ -76,8 +77,9 @@ public class DeleteNthNodeFromEnd {
         }
         temp.next = temp.next.next;
         return;
-
     }
+
+    
 
     public static void main(String[] args) {
 
@@ -89,7 +91,7 @@ public class DeleteNthNodeFromEnd {
         ll.addLast(4);
         ll.addLast(5);
         ll.print();
-        ll.deleteNthNodeFromEnd(3);
+        ll.deleteNthNodeFromEnd(5);
         ll.print();
 
     }

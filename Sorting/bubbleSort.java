@@ -1,7 +1,7 @@
 public class bubbleSort {
     public static void Bubblesort(int arr[]) {
         int n = arr.length;
-        for(int i=n-1;i>=1;i--){
+        for(int i=n-1;i>=1;i--){    
             boolean didSwap=false;  //for the optimisation
             for(int j=0;j<=i-1;j++){
                  if(arr[j]>arr[j+1]){
@@ -15,6 +15,7 @@ public class bubbleSort {
                 break;
             }
         }
+     
     }
 
     public static void main(String[] args) {

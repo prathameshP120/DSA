@@ -28,7 +28,22 @@ public class MeetingR_Two {
     public static void main(String[] args) {
         int intervals[][] = { { 0, 5 }, { 5, 10 }, { 15, 25 }, { 40, 60 }, { 50, 65 }, { 55, 75 } };
         int ans = Meeting_Room_two(intervals);
-        System.out.println("The number of required rooms are" + ans);
+        System.out.println("The number of required rooms are : " + ans);
     }
 
 }
+//Tmie Complexity :
+//Sorting n intervals by start time → O(n log n)
+// 2. Iterating through intervals
+// for (int i = 0; i < n; i++) {
+//     ...
+// }
+// Loop runs n times.
+// Inside the loop:
+// Heap operations (pq.add(), pq.remove(), pq.peek())
+// Each operation takes O(log k) time, where k is the size of the heap (≤ n).
+// 3. Total for heap operations
+// For n intervals →
+// Each interval causes at most one insertion and maybe one removal,
+// so total heap operations = O(n log n).
+//Total Time Complexity=O(n*logn) + O(n*logn)=O(n*logn)

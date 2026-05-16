@@ -34,8 +34,7 @@ public class TopologicalSorting {
         graph[4].add(new Edge(4, 1, 0));
         graph[4].add(new Edge(4, 0, 0));
     }
-
-    public static void topoLSort(ArrayList<Edge> graph[]) {
+public static void topoLSort(ArrayList<Edge> graph[]) {
         int v = graph.length;
 
         boolean vis[] = new boolean[v];

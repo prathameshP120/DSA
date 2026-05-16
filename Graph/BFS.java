@@ -55,7 +55,7 @@ public class BFS {
 
     }
 
-    public static void bfs(ArrayList<Edge>[] graph) {
+public static void bfs(ArrayList<Edge>[] graph) {
 
         //for storing the curr traversing element that we want to print as bfs
         Queue<Integer> q = new LinkedList<>();
@@ -76,7 +76,6 @@ public class BFS {
         }
 
     }
-
     public static void main(String[] args) {
 
         int V = 5;

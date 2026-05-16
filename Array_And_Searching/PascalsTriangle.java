@@ -9,24 +9,32 @@ public class PascalsTriangle {
             }
             return res;
     }
+    // public static void Var_two_Optimal(int n){
+    //      int res=1;
+    //      //we know that first element in the row must be 1
+    //      System.out.print(res+" ");
+    //      for(int i=1;i<n;i++){
+    //         res=res*(n-i);
+    //         res=res/i;
+    //         System.out.print(res+" ");
+    //      }
+    // }
     public static void Var_two_Optimal(int n){
          int res=1;
-         //we know that first element in the row must be 1
          System.out.print(res+" ");
-         for(int i=1;i<n;i++){
-            res=res*(n-i);
-            res=res/i;
-            System.out.print(res+" ");
+         for(int c=2;c<=n;c++){
+             res=res*(n-c+1);
+             res=res/(c-1);
+             System.out.print(res +" ");
          }
-
     }
     public static ArrayList<Integer> ans(int n){
         ArrayList<Integer> ansRow=new ArrayList<>();
         int res=1;
         ansRow.add(res);
-        for(int i=1;i<n;i++){
-            res=res*(n-i);
-            res=res/i;
+        for(int c=2;c<=n;c++){
+             res=res*(n-c+1);
+             res=res/(c-1);
             ansRow.add(res);
         }
         return ansRow;
@@ -49,12 +57,11 @@ public class PascalsTriangle {
         //Varaition 1
         int r=5;
         int col=3;
-        //int element=(int)pascalTriangleElement(r-1,col-1);
-        //System.out.println(element);
+        int element=(int)pascalTriangleElement(r-1,col-1);
+        System.out.println(element);
 
         //Variation 2 : Print the entire row
-
-        //int n=6;
+        int n=6;
         //brute force 
         //the first element should be 1 
         // for(int c=1;c<=n;c++){
@@ -62,12 +69,11 @@ public class PascalsTriangle {
         //     System.out.print(ele+" ");
         // }
         //optimal approach for variation 2
-
         //Var_two_Optimal(n);
 
 
         //Variation 3 : Print the entire pascal triangle
-        int n=6; 
+        //int n=6; 
         variation_three(n);
     }
 }

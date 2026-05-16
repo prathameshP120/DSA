@@ -47,7 +47,7 @@ public class DetectAcycle {
                 break;
             }
         }
-        if (Cycle = false) {
+        if (Cycle == false) {
             return;
         }
 
@@ -60,7 +60,16 @@ public class DetectAcycle {
             s = s.next;
             fast = fast.next;
         }
-        prev.next = null;
+        // Step 3: Break the cycle
+        if (prev != null) {
+            prev.next = null;   // Normal case
+        } else {
+            // Special case: cycle starts at head
+            while (fast.next != slow) {
+                fast = fast.next;
+            }
+            fast.next = null;
+        }
 
     }
 
@@ -71,10 +80,12 @@ public class DetectAcycle {
         head.next.next = new Node(3);
         head.next.next.next = head;
 
+
         System.out.println(ll.isCycle());
         ll.removeCycle();
 
         System.out.println(ll.isCycle());
+        print();
     }
 
 }

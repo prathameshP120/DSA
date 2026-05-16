@@ -30,7 +30,9 @@ public class SubarraySumEqualK{
             hm.put(sum,hm.getOrDefault(sum, 0)+1);
         }
 
-
+      return count;
+      //time complzexity=o(n);
+      //sc=o(n) beacuase of hash map
     }
     public static void main(String[] args) {
         int[] arr = {3, 1, 2, 4};

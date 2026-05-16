@@ -7,6 +7,7 @@ public class BasicPattern {
             System.out.println();
         }
     }
+   
     public static void pattern_number_one(){
         for(int i=0;i<=4;i++){
               for(int j=0;j<=i;j++){
@@ -178,12 +179,12 @@ public class BasicPattern {
         //pattern_number_one();
         //pattern_number_two();
         //pattern_two();
-        //pattern_three();
-        //pattern_three_opposite();
+         //pattern_three();
+        pattern_three_opposite();
         //pattern_four();
-         //One_Zero_triangle();
-         char_pattern_one();
-         //char_Pattern();
+        //One_Zero_triangle();
+        // char_pattern_one();
+        //char_Pattern();
         // rectangle_pattern();
         // inverted_Rotated_half_Pyramid();
         // floyd_pattern();

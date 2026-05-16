@@ -6,13 +6,33 @@ public class Activity_Selection {
         int start[] = { 1, 3, 0, 5, 8, 5 };
         int end[] = { 2, 4, 6, 7, 9, 9 };
         int activities[][] = new int[start.length][3];
+
+        int n=activities.length;
+        for(int i=0;i<n;i++){
+            activities[i][0]=i;
+            activities[i][1]=start[i];
+             activities[i][2]=end[i];            
+        }
+        //sort on the basis of the end time
+        //Arrays.sort(activities, Comparator.comparingDouble(i -> i[2]));
+        Arrays.sort(activities,(a,b)->{
+            if(a[2]<b[2]){
+                return -1;
+            }
+            else if(a[2]>b[2]){
+                return 1;
+            }else{
+                return 0;
+            }
+        }); 
+        
+
         for (int i = 0; i < activities.length; i++) {
             activities[i][0] = i;
             activities[i][1] = start[i];
             activities[i][2] = end[i];
         }
         // end time basis sorted
-        Arrays.sort(activities, Comparator.comparingDouble(i -> i[2]));
         int maxactivity = 0;
         ArrayList<Integer> ans = new ArrayList<>();
         // 1st Activity

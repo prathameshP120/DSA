@@ -10,8 +10,12 @@ public class InputInteger {
         System.out.print("Enter a number: ");
         int num = sc.nextInt();
         System.out.println("You entered: " + num);
+        Scanner sc=new Scanner(System.in);
+        
     }
 }
+
+
 
 ✅ 2. Take a String as Input
 import java.util.Scanner;
@@ -26,8 +30,8 @@ public class InputString {
 }
 ✅ 3. Take an Array of Integers as Input
 java
-Copy
-Edit
+
+
 import java.util.Scanner;
 
 public class InputArray {
@@ -49,9 +53,7 @@ public class InputArray {
     }
 }
 ✅ 4. Take an ArrayList of Integers as Input
-java
-Copy
-Edit
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -67,22 +69,15 @@ public class InputArrayList {
         for(int i = 0; i < n; i++) {
             list.add(sc.nextInt());
         }
+        
 
         System.out.println("ArrayList elements: " + list);
     }
 }
 ⚡ Bonus Tip:
 For space-separated input like:
-
-text
-Copy
-Edit
 10 20 30 40 50
 You can do:
-
-java
-Copy
-Edit
 String[] tokens = sc.nextLine().split(" ");
 int[] arr = new int[tokens.length];
 for (int i = 0; i < tokens.length; i++) {
@@ -91,9 +86,7 @@ for (int i = 0; i < tokens.length; i++) {
 //Let me know if you want input examples for other types too — like 2D arrays, Maps, Custom classes, etc.
 
 ✅ 1. Reading a Space-Separated Line into an Integer Array
-java
-Copy
-Edit
+
 Scanner sc = new Scanner(System.in);
 String[] tokens = sc.nextLine().split(" ");
 int[] arr = new int[tokens.length];
@@ -101,10 +94,8 @@ int[] arr = new int[tokens.length];
 for (int i = 0; i < tokens.length; i++) {
     arr[i] = Integer.parseInt(tokens[i]);
 }
+
 ✅ 2. Reading a 2D Array (Matrix)
-java
-Copy
-Edit
 int rows = sc.nextInt();
 int cols = sc.nextInt();
 int[][] matrix = new int[rows][cols];
@@ -115,9 +106,7 @@ for (int i = 0; i < rows; i++) {
     }
 }
 ✅ 3. Reading a List of Strings into an ArrayList
-java
-Copy
-Edit
+
 int n = sc.nextInt();
 sc.nextLine(); // consume newline
 
@@ -126,9 +115,7 @@ for (int i = 0; i < n; i++) {
     list.add(sc.nextLine());
 }
 ✅ 4. Reading Characters from a String
-java
-Copy
-Edit
+
 String input = sc.nextLine();
 char[] chars = input.toCharArray();
 ✅ 5. Reading a Boolean Expression Input as String
@@ -138,9 +125,7 @@ Edit
 System.out.println("Enter a logical expression:");
 String logicalExpr = sc.nextLine();  // e.g. (age > 18 && salary > 50000)
 ✅ 6. Reading Delimited Input into ArrayList
-java
-Copy
-Edit
+
 String input = sc.nextLine(); // e.g. "a,b,c,d"
 String[] items = input.split(",");
 ArrayList<String> list = new ArrayList<>(Arrays.asList(items));
@@ -162,21 +147,18 @@ int age = sc.nextInt();
 sc.nextLine(); // consume leftover newline
 String name = sc.nextLine();
 ✅ 9. Reading a Set of Unique Integers
-java
-Copy
-Edit
+
 Set<Integer> set = new HashSet<>();
 int n = sc.nextInt();
 for (int i = 0; i < n; i++) {
     set.add(sc.nextInt());
 }
 ✅ 10. Reading and Sorting an ArrayList
-java
-Copy
-Edit
+
 ArrayList<Integer> list = new ArrayList<>();
 int n = sc.nextInt();
 for (int i = 0; i < n; i++) {
     list.add(sc.nextInt());
 }
+
 Collections.sort(list); // ascending

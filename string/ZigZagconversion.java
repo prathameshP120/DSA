@@ -23,9 +23,10 @@ public class ZigZagconversion {
             int idx = i;
             int southDelta = 2 * (nr - 1 - i);
             int northDelta = 2 * i;
+             boolean goSouth = true;
             while (idx < s.length()) {
                 str.append(s.charAt(idx));
-                boolean goSouth = true;
+               
                 if (i == 0) {
                     idx += southDelta;
                 } else if (i == nr - 1) {

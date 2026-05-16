@@ -71,14 +71,7 @@ public class DetectCycleInUn {
 
     public static boolean detectCycle(ArrayList<Edge>[] graph) {
         boolean[] vis = new boolean[graph.length];
-        // for (int i = 0; i < graph.length; i++) {
-        // if (!vis[i]) {
-        // if (detectCycleUtil(graph, vis, i, -1)) {
-        // return true;
-        // }
-        // }
-        // }
-        // return false;
+       
         for (int i = 0; i < graph.length; i++) {
             if (!vis[i]) {
                 if (detectCycleUtil(graph, vis, i, -1)) {
@@ -96,26 +89,27 @@ public class DetectCycleInUn {
             // case 1 : if neighbour is not visited => simple apply normal dfs
 
             if (!vis[e.dest]) {
-                if (detectCycleUtil(graph, vis, e.dest, curr))
+                if (detectCycleUtil(graph, vis, e.dest, curr)){
                     return true;
-
+                }
                 // case 2: neighbour of current is visited and it is also current parrents =>
-
+            }
                 // do nothing
 
                 // case 3: if neighbour of curr is visited and it is not parent of current =>
                 // then there is cycle is present
-                else if (e.dest != parent) {
-                    return true;
+                if(vis[e.dest]==true){
+                 if (e.dest != parent) {
+                         return true;
+                    }
                 }
-            }
+            
         }
         return false;
 
     }
 
     public static void main(String[] args) {
-
         int V = 7; // Updated number of vertices to 7
         ArrayList<Edge>[] graph = new ArrayList[V]; // Declare graph with 7 vertices
 

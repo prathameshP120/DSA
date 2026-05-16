@@ -27,7 +27,6 @@ public class PrintAllPath {
         }
 
     }
-
     public static void createGraph(ArrayList<Edge> graph[]) {
         for (int i = 0; i < 6; i++) {
             graph[i] = new ArrayList<>(); // Initialize each index with a new ArrayList
@@ -42,6 +41,28 @@ public class PrintAllPath {
         graph[4].add(new Edge(4, 0, 0)); //
         graph[4].add(new Edge(4, 1, 0)); //
     }
+   
+     public static void printAllPath(int src, int dest,
+                                   ArrayList<Edge>[] graph,
+                                   ArrayList<Integer> path) {
+
+        path.add(src); // add current node
+
+        // base case
+        if (src == dest) {
+            System.out.println(path);
+            path.remove(path.size() - 1); // backtrack
+            return;
+        }
+
+        // explore neighbors
+        for (Edge e : graph[src]) {
+            printAllPath(e.dest, dest, graph, path);
+        }
+
+        path.remove(path.size() - 1); // backtrack
+    }
+
 
     public static void main(String[] args) {
         int v = 7;
@@ -50,7 +71,7 @@ public class PrintAllPath {
         createGraph(graph);
         int src = 5;
         int dest = 1;
-        printAllPath(src, dest, graph, "");
+        printAllPath(src, dest, graph, new ArrayList<>());
     }
 
 }

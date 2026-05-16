@@ -15,13 +15,11 @@ public class isBipartite {
             this.wt = w;
         }
     }
-
     public static void createGraph(ArrayList<Edge>[] graph) {
         int V = graph.length;
         for (int i = 0; i < V; i++) {
             graph[i] = new ArrayList<>();
         }
-
         // Graph construction as per the original GFG-style example
         graph[0].add(new Edge(0, 2, 0));
         graph[2].add(new Edge(2, 0, 0));

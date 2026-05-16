@@ -53,15 +53,10 @@ public class CreateAGraph {
         graph[4].add(new Edge(4, 2, 2));
 
         for (int i = 0; i < graph[2].size(); i++) {
-
             Edge e = graph[2].get(i); // src,dest,wt
-
             System.out.println(e.dest);
-
         }
-
     }
-
 }
 /*
  * Edge is a custom class that holds:

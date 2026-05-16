@@ -1,6 +1,8 @@
+
+
 import java.util.Arrays;
 
-public class Knapsack {
+public class zero_one_Knapsack {
 
     public static int solveUsingRecursion(int[] wt, int[] profit,
             int index, int capacity) {
@@ -64,32 +66,7 @@ public class Knapsack {
         return dp[ind][W];
     }
 
-    // public static int solveUsingTabulation(int capacity, int[] wt, int[] profit,
-    // int n) {
-    // int[][] dp = new int[capacity + 1][n + 1];
 
-    // for (int[] row : dp) {
-    // Arrays.fill(row, -1);
-    // }
-
-    // for (int row = 0; row <= capacity; row++) {
-    // dp[row][n] = 0;
-    // }
-
-    // for (int i = 0; i <= capacity; i++) {
-    // for (int j = n - 1; j >= 0; j--) {
-    // int include = 0;
-    // if (wt[j] <= i) {
-    // include = profit[j] + dp[i - wt[j]][j + 1];
-    // }
-    // int exclude = 0 + dp[i][j + 1];
-    // dp[i][j] = Math.max(include, exclude);
-    // }
-    // }
-    // printDPArray(dp);
-
-    // return dp[capacity][0];
-    // }
     public static int solveUsingTabulation(int[] wt, int[] profit, int capacity) {
         // Create a 2D DP array to store the maximum value for each subproblem
         int n = wt.length;

@@ -1,38 +1,24 @@
+import java.sql.Time;
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class longest_substring_without_reapeating_charcter {
     public static int LOLongestSubsUsingBruteForce(String s) {
-        int n = s.length();
-        int l = 0;
-        int r = 0;
-        // here we try to generate all the possible substrings
-        int maxLen = 0;
-        for (int i = 0; i < n; i++) {
-            // Initialize the hash array to keep
-            // track of characters in the current substring
-
-            // Using 256 to cover all ASCII characters
-            int hash[] = new int[256];
-
-            for (int j = i; j < n; j++) {
-                if (hash[s.charAt(j)] == 1) {
-                    break;
-                }
-                maxLen = Math.max(maxLen, j - i + 1);
-                hash[s.charAt(j)] = 1;
-            }
+        int n=s.length();
+        int maxlength=0;
+        for(int i=0;i<n;i++){
+              HashSet<Character> set=new HashSet<>();
+              for(int j=i;j<n;j++){
+                   if(set.contains(s.charAt(j))){
+                        maxlength=Math.max(maxlength,j-i);
+                        break;
+                   }
+                 set.add(s.charAt(i));
+              }
+              
         }
-        return maxLen;
-        // Time Complexity: O(N2) where N is the length of the input string. The outer
-        // loop runs from the starting to the end of the string and the inner loop from
-        // the starting of the outer loop to the end.
-        // In the best case, the inner loop breaks early when a repeating character is
-        // found.
-        // In the worst-case scenario, the inner loop runs through the length of the
-        // string for each iteration of the outer loop leading to O(N x N) complexity.
-        // Space Complexity : O(256) as a fixed array of size 256 to cover all ASCII
-        // characters is used. This uses constant space and is not proportional to the
-        // input values.
+
+        return maxlength;
 
     }
 
@@ -102,12 +88,36 @@ public class longest_substring_without_reapeating_charcter {
         // characters is used. This uses constant space and is not proportional to the
         // input values.
     }
+    public static int Better(String s){
+          int n=s.length();
+          int l=0;
+          int r=0;
+          int maxlen=0;
+          HashSet<Character> set=new HashSet<>(); 
+          while(r<n){
+              while(l<r && set.contains(s.charAt(r))){
+                   set.remove(s.charAt(l));
+                   l++;
+
+              }
+              set.add(s.charAt(r));
+              maxlen=Math.max(maxlen,r-l+1);
+              r++;
+          }
+          return maxlen;
+     //Time Complexity: O( 2*N ) (sometimes left and right both have to travel complete array)
+     //Space Complexity: O(N) where N is the size of HashSet taken for storing the elements
+
+    }
+    
 
     public static void main(String[] args) {
         String s = "abcabcbb";
         System.out.println("Input String: " + s);
         // Using Bruete force
-        int ans = LOLongestSubsUsingBruteForce(s);
+        //int ans = LOLongestSubsUsingBruteForce(s);
+        //Better Approach :
+        int ans=Better(s);
         System.out.println();
         // Using Optimal Solution
 

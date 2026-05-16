@@ -54,7 +54,7 @@ class Solution {
             return 0;
         }
         dp[1] = 1;
-
+        
         // Step 3: Fill the remaining dp array
         // Array size is n + 1
         // Index moves from 0 to n

@@ -14,6 +14,9 @@ public class MCM {
             mini = Math.min(mini, steps);
         }
         return mini;
+
+
+
     }
 
     public static int memoization(int arr[], int i, int j, int dp[][]) {
